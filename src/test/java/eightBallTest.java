@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -20,6 +21,12 @@ public class eightBallTest {
         eightBallAnswers = new EightBall(answers);
     }
 
+//    @Test  // Shorter test created during review
+//    public void canGetRandomAnswer(){
+//        String randomAnswer = eightBallAnswers.getRandomAnswer();
+//        assertTrue(eightBallAnswers.getAnswers().contains(randomAnswer));
+//    }
+
     @Test
     public void canGetRandomAnswer(){
         ArrayList<String> answers = eightBallAnswers.getAnswers();
@@ -32,6 +39,7 @@ public class eightBallTest {
         eightBallAnswers.addNewAnswer("New Answer");
         ArrayList<String> answers = eightBallAnswers.getAnswers();
         assertTrue(answers.contains("New Answer"));
+        assertEquals(5,answers.size()); // added during review
     }
 
     @Test
@@ -39,6 +47,7 @@ public class eightBallTest {
         eightBallAnswers.deleteAnswer("Ask again later");
         ArrayList<String> answers = eightBallAnswers.getAnswers();
         assertFalse(answers.contains("Ask again later"));
+        assertEquals(3,answers.size()); // added during review
     }
 
 }

@@ -23,8 +23,9 @@ public class EightBall {
     }
 
     public void deleteAnswer(String delAnswer){
-        int answerIndex = this.answers.indexOf(delAnswer);
-        this.answers.remove(answerIndex);
+//        int answerIndex = this.answers.indexOf(delAnswer);
+//        this.answers.remove(answerIndex);
+        this.answers.remove(delAnswer); // added during review
     }
 
 }
